@@ -38,6 +38,10 @@ variable "kv_name" {
     type = string
 }
 
+variable "vm_name" {
+    type = string
+}
+
 variable "mds_name" {
     type = string
 }

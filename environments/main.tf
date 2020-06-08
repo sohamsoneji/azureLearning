@@ -18,12 +18,13 @@ module "azure_terraform_ex1_vm" {
   location = var.location
   nsg_name = var.nsg_name
   nic_name = var.nic_name
+  vm_name = var.vm_name
   rg_name = var.rg_name
-  subnet_id = "${module.azure_terraform_ex1_vnet.subnet_id}"
+  sbnt_id = "${module.azure_terraform_ex1_vnet.subnet_id}"
   environment = var.environment
 }
 
-module "my_dashboard" {
+module "azure_terraform_ex1_dashboard" {
   source = "../modules/dashboard"
   storage_acc_name = var.storage_acc_name
   rg_name = var.rg_name
@@ -31,5 +32,5 @@ module "my_dashboard" {
   mds_name = var.mds_name
   email_id = var.email_id
   mma_name = var.mma_name
-  vm_id = "${module.azure_terraform_ex1_vm.vm_id}"
+  vmid = "${module.azure_terraform_ex1_vm.vm_id}"
 }

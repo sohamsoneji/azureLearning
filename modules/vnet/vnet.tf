@@ -22,5 +22,5 @@ resource "azurerm_subnet" "azure_terraform_ex1_subnet" {
     name                 = var.subnet_name
     resource_group_name  = azurerm_resource_group.azure_terraform_ex1_rg.name
     virtual_network_name = azurerm_virtual_network.azure_terraform_ex1_vnet.name
-    address_prefix       = ["192.168.0.1/26"]
+    address_prefixes       = ["192.168.0.0/26"]
 }

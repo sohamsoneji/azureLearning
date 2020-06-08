@@ -22,3 +22,11 @@ variable "nic_name" {
   type = string
 }
 
+variable "sbnt_id" {
+  
+}
+
+variable "vm_name" {
+  type = string
+}
+

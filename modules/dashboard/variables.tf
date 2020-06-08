@@ -14,6 +14,10 @@ variable "mds_name" {
     type = string
 }
 
+variable "vmid" {
+  
+}
+
 variable "email_id" {
     type = string
 }
@@ -21,4 +25,3 @@ variable "email_id" {
 variable "mma_name" {
     type = string
 }
-
