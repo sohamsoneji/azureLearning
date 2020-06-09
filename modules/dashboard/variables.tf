@@ -26,10 +26,18 @@ variable "mysqlserverid" {
   
 }
 
+variable "lbid" {
+  
+}
+
 variable "email_id" {
     type = string
 }
 
 variable "mma_name" {
     type = string
+}
+
+variable "vm_count" {
+  type = number
 }

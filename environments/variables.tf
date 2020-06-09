@@ -30,6 +30,10 @@ variable "public_ip_name" {
   type = string
 }
 
+variable "firewall_name" {
+  type = string
+}
+
 variable "ssh_port" {
     type = number
 }
@@ -66,7 +70,31 @@ variable "vm_size" {
   type = string
 }
 
-variable "private_ip" {
+variable "frontend_ip_name" {
+  type = string
+}
+
+variable "lb_name" {
+  type = string
+}
+
+variable "lb_rule_name" {
+  type = string
+}
+
+variable "lb_rule_protocol" {
+  type = string
+}
+
+variable "vm_count" {
+  type = number
+}
+
+variable "managed_disk_size_gb" {
+  type = number
+}
+
+variable "avset_name" {
   type = string
 }
 
