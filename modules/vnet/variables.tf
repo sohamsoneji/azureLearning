@@ -14,8 +14,15 @@ variable "vnet_name" {
     type = string
 }
 
+variable "vnet_range" {
+    type = string
+}
+
 variable "subnet_name" {
     type = string
 }
 
+variable "subnet_range" {
+    type = string
+}
 

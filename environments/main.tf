@@ -9,16 +9,24 @@ module "azure_terraform_ex1_vnet" {
   location = var.location
   environment = var.environment
   vnet_name = var.vnet_name
+  vnet_range = var.vnet_range
   subnet_name = var.subnet_name
+  subnet_range = var.subnet_range
 }
 
 module "azure_terraform_ex1_vm" {
   source = "../modules/vm"
+  public_ip_name = var.public_ip_name
   ssh_port = var.ssh_port
   location = var.location
   nsg_name = var.nsg_name
   nic_name = var.nic_name
   vm_name = var.vm_name
+  vm_size = var.vm_size
+  private_ip = var.private_ip
+  storage_acc_type = var.storage_acc_type
+  storage_acc_tier = var.storage_acc_tier
+  storage_acc_reptype = var.storage_acc_reptype
   rg_name = var.rg_name
   sbnt_id = "${module.azure_terraform_ex1_vnet.subnet_id}"
   environment = var.environment
