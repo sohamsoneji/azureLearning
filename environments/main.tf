@@ -32,6 +32,14 @@ module "azure_terraform_ex1_vm" {
   environment = var.environment
 }
 
+module "azure_terraform_ex1_mysql" {
+  source = "../modules/mysql"
+  rg_name = var.rg_name
+  location = var.location
+  mysql_server_name = var.mysql_server_name
+  mysql_db_name = var.mysql_db_name
+}
+
 module "azure_terraform_ex1_dashboard" {
   source = "../modules/dashboard"
   storage_acc_name = var.storage_acc_name
@@ -41,4 +49,6 @@ module "azure_terraform_ex1_dashboard" {
   email_id = var.email_id
   mma_name = var.mma_name
   vmid = "${module.azure_terraform_ex1_vm.vm_id}"
+  storageaccid = "${module.azure_terraform_ex1_vm.storage_acc_id}"
+  mysqlserverid = "${module.azure_terraform_ex1_mysql.mysql_server_id}"
 }

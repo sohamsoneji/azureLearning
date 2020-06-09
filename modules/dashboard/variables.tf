@@ -18,6 +18,14 @@ variable "vmid" {
   
 }
 
+variable "storageaccid" {
+  
+}
+
+variable "mysqlserverid" {
+  
+}
+
 variable "email_id" {
     type = string
 }

@@ -74,6 +74,14 @@ variable "storage_acc_type" {
   type = string
 }
 
+variable "mysql_server_name" {
+    type = string
+}
+
+variable "mysql_db_name" {
+    type = string
+}
+
 variable "mds_name" {
     type = string
 }
