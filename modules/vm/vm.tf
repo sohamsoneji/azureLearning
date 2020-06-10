@@ -102,8 +102,8 @@ resource "azurerm_availability_set" "azure_terraform_ex1_avset" {
   name                         = var.avset_name
   location                     = azurerm_network_security_group.azure_terraform_ex1_nsg.location
   resource_group_name          = azurerm_network_security_group.azure_terraform_ex1_nsg.resource_group_name
-  platform_fault_domain_count  = var.vm_count
-  platform_update_domain_count = var.vm_count
+  platform_fault_domain_count  = 2
+  platform_update_domain_count = 2
   managed                      = true
 }
 
@@ -196,5 +196,17 @@ resource "azurerm_linux_virtual_machine" "azure_terraform_ex1_vm" {
 
   tags = {
     environment = var.environment
+  }
+
+  provisioner "file" {
+    source      = "drupal.sh"
+    destination = "/tmp/drupal.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/drupal.sh",
+      "./tmp/drupal.sh",
+    ]
   }
 }
