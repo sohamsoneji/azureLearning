@@ -10,6 +10,14 @@ variable "environment" {
     type = string
 }
 
+variable "owner" {
+    type = string
+}
+
+variable "project" {
+    type = string
+}
+
 variable "vnet_name" {
     type = string
 }
@@ -26,7 +34,15 @@ variable "subnet_range" {
     type = string
 }
 
-variable "public_ip_name" {
+variable "firewall_subnet_range" {
+    type = string
+}
+
+variable "public_ip_name_lb" {
+  type = string
+}
+
+variable "public_ip_name_firewall" {
   type = string
 }
 
@@ -40,6 +56,10 @@ variable "ssh_port" {
 
 variable "nsg_name" {
     type = string
+}
+
+variable "private_ip_vm" {
+  type = list
 }
 
 variable "nic_name" {
@@ -106,11 +126,27 @@ variable "mysql_server_name" {
     type = string
 }
 
+variable "mysql_server_user" {
+    type = string
+}
+
+variable "mysql_server_pass" {
+    type = string
+}
+
 variable "mysql_db_name" {
     type = string
 }
 
-variable "mds_name" {
+variable "mds_name_vm" {
+    type = string
+}
+
+variable "mds_name_lb" {
+    type = string
+}
+
+variable "mds_name_mysql" {
     type = string
 }
 
@@ -118,7 +154,15 @@ variable "email_id" {
     type = string
 }
 
-variable "mma_name" {
+variable "mma_name_vm" {
+    type = string
+}
+
+variable "mma_name_lb" {
+    type = string
+}
+
+variable "mma_name_mysql" {
     type = string
 }
 

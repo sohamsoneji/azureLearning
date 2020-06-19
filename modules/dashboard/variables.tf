@@ -10,7 +10,15 @@ variable "kv_name" {
     type = string
 }
 
-variable "mds_name" {
+variable "mds_name_vm" {
+    type = string
+}
+
+variable "mds_name_lb" {
+    type = string
+}
+
+variable "mds_name_mysql" {
     type = string
 }
 
@@ -34,7 +42,15 @@ variable "email_id" {
     type = string
 }
 
-variable "mma_name" {
+variable "mma_name_vm" {
+    type = string
+}
+
+variable "mma_name_lb" {
+    type = string
+}
+
+variable "mma_name_mysql" {
     type = string
 }
 
